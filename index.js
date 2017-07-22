@@ -330,6 +330,7 @@ class DatePicker extends Component {
       minuteInterval,
       timeZoneOffsetInMinutes,
       cancelBtnText,
+      titleText,
       confirmBtnText,
       TouchableComponent,
       testID,
@@ -395,26 +396,29 @@ class DatePicker extends Component {
                         style={[Style.datePicker, customStyles.datePicker]}
                       />
                     </View>
-                    <TouchableComponent
-                      underlayColor={'transparent'}
-                      onPress={this.onPressCancel}
-                      style={[Style.btnText, Style.btnCancel, customStyles.btnCancel]}
-                      testID={cancelBtnTestID}
-                    >
-                      <Text
-                        style={[Style.btnTextText, Style.btnTextCancel, customStyles.btnTextCancel]}
+                    <View style={Style.datePickerHeader}>
+                      <TouchableComponent
+                        underlayColor={'transparent'}
+                        onPress={this.onPressCancel}
+                        style={[Style.btnText, Style.btnCancel, customStyles.btnCancel]}
+                        testID={cancelBtnTestID}
                       >
-                        {cancelBtnText}
-                      </Text>
-                    </TouchableComponent>
-                    <TouchableComponent
-                      underlayColor={'transparent'}
-                      onPress={this.onPressConfirm}
-                      style={[Style.btnText, Style.btnConfirm, customStyles.btnConfirm]}
-                      testID={confirmBtnTestID}
-                    >
-                      <Text style={[Style.btnTextText, customStyles.btnTextConfirm]}>{confirmBtnText}</Text>
-                    </TouchableComponent>
+                        <Text style={[Style.btnTextText, Style.btnTextCancel, customStyles.btnTextCancel]}>
+                          {cancelBtnText}
+                        </Text>
+                      </TouchableComponent>
+                      <View style={[Style.btnText, Style.btnContext, customStyles.btnContext]}>
+                        <Text style={[Style.btnTextText, Style.titleText, customStyles.titleText]}>{titleText}</Text>
+                      </View>
+                      <TouchableComponent
+                        underlayColor={'transparent'}
+                        onPress={this.onPressConfirm}
+                        style={[Style.btnText, Style.btnConfirm, customStyles.btnConfirm]}
+                        testID={confirmBtnTestID}
+                      >
+                        <Text style={[Style.btnTextText, customStyles.btnTextConfirm]}>{confirmBtnText}</Text>
+                      </TouchableComponent>
+                    </View>
                   </Animated.View>
                 </TouchableComponent>
               </TouchableComponent>
@@ -458,8 +462,9 @@ DatePicker.propTypes = {
   maxDate: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
   height: PropTypes.number,
   duration: PropTypes.number,
-  confirmBtnText: PropTypes.string,
   cancelBtnText: PropTypes.string,
+  titleText: PropTypes.string,
+  confirmBtnText: PropTypes.string,
   iconSource: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
   iconComponent: PropTypes.element,
   customStyles: PropTypes.object,

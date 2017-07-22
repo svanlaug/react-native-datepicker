@@ -33,39 +33,44 @@ let style = StyleSheet.create({
   datePickerMask: {
     flex: 1,
     alignItems: 'flex-end',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    backgroundColor: 'transparent'
   },
   datePickerCon: {
     backgroundColor: '#fff',
     height: 0,
     overflow: 'hidden'
   },
-  btnText: {
+  datePickerHeader: {
     position: 'absolute',
     top: 0,
     height: 42,
-    padding: 20,
+    width: 375,
+    backgroundColor: '#E9F7FD',
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  btnText: {
+    padding: 6,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center'
   },
   btnTextText: {
     fontSize: 16,
-    color: '#46cf98'
+    fontWeight: 'bold',
+    color: '#007AFF'
   },
   btnTextCancel: {
-    color: '#666'
+    fontWeight: 'normal',
   },
-  btnCancel: {
-    left: 0
-  },
-  btnConfirm: {
-    right: 0
+  titleText: {
+    fontSize: 17,
+    fontWeight: 'normal',
+    color: '#000000'
   },
   datePicker: {
-    marginTop: 42,
-    borderTopColor: '#ccc',
-    borderTopWidth: 1
+    marginTop: 42
   },
   disabled: {
     backgroundColor: '#eee'
