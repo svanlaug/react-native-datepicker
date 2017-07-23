@@ -4,6 +4,9 @@ let style = StyleSheet.create({
   dateTouch: {
     width: 142
   },
+  activeDateTouch: {
+    backgroundColor: '#ffce54'
+  },
   dateTouchBody: {
     flexDirection: 'row',
     height: 40,
@@ -29,6 +32,10 @@ let style = StyleSheet.create({
   },
   placeholderText: {
     color: '#c9c9c9'
+  },
+  activeText: {
+    fontWeight: 'bold',
+    color: '#000'
   },
   datePickerMask: {
     flex: 1,
@@ -62,7 +69,7 @@ let style = StyleSheet.create({
     color: '#007AFF'
   },
   btnTextCancel: {
-    fontWeight: 'normal',
+    fontWeight: 'normal'
   },
   titleText: {
     fontSize: 17,

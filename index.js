@@ -175,21 +175,21 @@ class DatePicker extends Component {
     const {date, placeholder, customStyles} = this.props;
 
     if (!date && placeholder) {
-      return (<Text style={[Style.placeholderText, customStyles.placeholderText]}>{placeholder}</Text>);
+      return (<Text style={[Style.placeholderText, customStyles.placeholderText, this.state.modalVisible && Style.activeText]}>{placeholder}</Text>);
     }
-    return (<Text style={[Style.dateText, customStyles.dateText]}>{this.getDateStr()}</Text>);
+    return (<Text style={[Style.dateText, customStyles.dateText, this.state.modalVisible && Style.activeText]}>{this.getDateStr()}</Text>);
   }
 
   onDateChange(date) {
     this.setState({
       allowPointerEvents: false,
       date: date
-    })
+    });
     const timeoutId = setTimeout(() => {
       this.setState({
         allowPointerEvents: true
-      })
-      clearTimeout(timeoutId)
+      });
+      clearTimeout(timeoutId);
     }, 200);
   }
 
@@ -346,7 +346,7 @@ class DatePicker extends Component {
 
     return (
       <TouchableComponent
-        style={[Style.dateTouch, style]}
+        style={[Style.dateTouch, style, this.state.modalVisible && Style.activeDateTouch]}
         underlayColor={'transparent'}
         onPress={this.onPressDate}
         testID={testID}
