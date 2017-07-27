@@ -1,4 +1,6 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
+
+var {width} = Dimensions.get('window');
 
 let style = StyleSheet.create({
   dateTouch: {
@@ -52,7 +54,7 @@ let style = StyleSheet.create({
     position: 'absolute',
     top: 0,
     height: 42,
-    width: 375,
+    width: width,
     backgroundColor: '#E9F7FD',
     flexDirection: 'row',
     justifyContent: 'space-between'
