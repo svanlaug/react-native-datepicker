@@ -75,7 +75,7 @@ let style = StyleSheet.create({
   },
   titleText: {
     fontSize: 17,
-    fontWeight: 'normal',
+    fontWeight: '600',
     color: '#000000'
   },
   datePicker: {
